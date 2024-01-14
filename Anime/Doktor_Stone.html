@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiceland</title>
+    <link rel="stylesheet" href="Files/Code/style.css">
+</head>
+<body>
+    <header>
+        <img src="Files/Code/Images/Банер.jpg" alt="Your Video Site">
+    </header>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="Files/Code/Anime.html">Тайтлы</a>
+        <a href="#">Команда</a>
+        <!-- Добавьте дополнительные вкладки по аналогии -->
+    </nav>
+    <main>
+        <div class="video-description">
+            <h2>Проходящая в последний путь</h2>
+            <div class="description-image">
+                <!-- Замените src на путь к вашему изображению -->
+                <img src="Images/Банер на видео 1.webp" alt="Description Image">
+            </div>
+            <div class="description-text">
+                <p>Год: 2022</p>
+                <p>Страна: Япония</p>
+                <p>Жанр: Фэнтези, Приключения, Экшен</p>
+                <p>Король демонов повержен. Миссия отряда поддержки героя наконец-то завершена, участники похода радостно расходятся по домам. Их щедро наградили, и теперь можно беззаботно доживать свой век рядом с близкими. Грустно только красотке Фрирен, ведь она эльф. Дар долголетия превращается в наказание. Девушка становится свидетелем старения и смерти всех своих друзей. Фрирен понимает, что время, проведенное в отряде героя, – лучшие годы ее жизни. И это время безвозвратно ушло. Но так ли это? Эльфийка отправляется в новое путешествие, чтобы найти ответ.</p>
+            </div>
+            <div class="episode-selector">
+                <button onclick="changeVideo('VIDEO_ID_1', 'Видео 1')">Эпизод 1</button>
+                <button onclick="changeVideo('VIDEO_ID_2', 'Видео 2')">Эпизод 2</button>
+                <button onclick="changeVideo('VIDEO_ID_3', 'Видео 3')">Эпизод 3</button>
+                <!-- Добавьте дополнительные кнопки для других эпизодов по аналогии -->
+            </div>
+        </div>
+        <div class="video-container">
+            <!-- Замените URL на видео на свой -->
+            <iframe width="560" height="315" src="https://youtu.be/rI-PhPF0DAQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </main>
+    <script>
+        function changeVideo(videoId, episodeTitle) {
+            var videoFrame = document.getElementById('video-frame');
+            var videoDescription = document.getElementById('video-description');
+
+            // Заменяем источник видео
+            videoFrame.src = 'https://www.youtube.com/embed/' + videoId;
+
+            // Убираем активный класс со всех кнопок
+            var buttons = document.querySelectorAll('.episode-selector button');
+            buttons.forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+            // Добавляем активный класс к нажатой кнопке
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
